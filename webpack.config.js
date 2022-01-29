@@ -2,6 +2,8 @@ const wbepack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin')
 const path = require('path')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 
 module.exports = {
   entry: ['./src/index.js'],
@@ -30,7 +32,9 @@ module.exports = {
       {
         test: /\.css$/,
         exclude: /node_modules/,
-        use: ['isomorphic-style-loader', 'css-loader',]
+        use: [{
+          loader: MiniCssExtractPlugin.loader,
+        }, 'css-loader',]
       }
     ]
   },
@@ -40,6 +44,15 @@ module.exports = {
       filename: 'index.html',
       inlineSource: '.(js|css)',
     }),
+    new MiniCssExtractPlugin({
+      filename: 'styles.css',
+    })
     // new HtmlWebpackInlineSourcePlugin(),
-  ]
+  ],
+  optimization: {
+    minimizer: [
+      `...`,
+      new CssMinimizerPlugin(),
+    ],
+  },
 }

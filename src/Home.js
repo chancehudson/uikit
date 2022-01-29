@@ -1,8 +1,7 @@
 import React from 'react'
-import s from './shared.css'
-import withStyles from 'isomorphic-style-loader/withStyles'
+import './shared.css'
 
-export default withStyles(s)(() => {
+export default () => {
   return (
     <div className="container">
       <div className="header">
@@ -16,4 +15,4 @@ export default withStyles(s)(() => {
       </div>
     </div>
   )
-})
+}

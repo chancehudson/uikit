@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack",
     "build:server": "webpack --config webpack.server.js",
-    "dev:ssr": "npm run build:server && node server-build",
+    "dev:ssr": "npm run build && node server",
     "dev": "webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -21,16 +21,20 @@
     "@babel/core": "^7.16.12",
     "@babel/plugin-proposal-class-properties": "^7.16.7",
     "@babel/plugin-proposal-decorators": "^7.16.7",
+    "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.7",
+    "@babel/register": "^7.16.9",
     "babel-loader": "^8.2.3",
+    "babel-plugin-css-modules-transform": "^1.6.2",
+    "babel-plugin-dynamic-import-node": "^2.3.3",
+    "babel-polyfill": "^6.26.0",
     "css-loader": "^6.5.1",
+    "css-minimizer-webpack-plugin": "^3.4.1",
     "html-webpack-inline-source-plugin": "^0.0.10",
     "html-webpack-plugin": "^5.5.0",
-    "isomorphic-style-loader": "^5.3.2",
-    "style-loader": "^3.3.1",
+    "mini-css-extract-plugin": "^2.5.3",
     "webpack": "^5.67.0",
     "webpack-cli": "^4.9.2",
-    "webpack-dev-server": "^4.7.3",
-    "webpack-node-externals": "^3.0.0"
+    "webpack-dev-server": "^4.7.3"
   }
 }

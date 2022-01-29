@@ -3,4 +3,3 @@ node_modules
 *.tmp
 *.swp
 build
-server-build
