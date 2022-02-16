@@ -7,7 +7,7 @@ import Home from '../src/Home'
 
 addEventListener('fetch', event => event.respondWith(handleEvent(event)))
 
-const DEBUG = true
+const DEBUG = false
 
 async function handleEvent(event) {
   const options = {}
@@ -16,11 +16,21 @@ async function handleEvent(event) {
       bypassCache: true,
     })
   }
+  const cache = caches.default
+  const cacheKey = new Request(new URL(event.request.url).toString(), event.request)
+  {
+    const response = await cache.match(cacheKey)
+    console.log(`Cache hit: ${event.request.url}`)
+    if (response) return response
+  }
   if (/.+\.[a-zA-Z]+$/.test(event.request.url)) {
     // the file has an extension, treat it as a static asset
     const asset = await getAssetFromKV(event, options)
-    const response = new Response(asset.body, asset)
+    const [b1, b2] = asset.body.tee()
+    const response = new Response(b1, asset)
     response.headers.set('Referrer-Policy', 'unsafe-url')
+    response.headers.set('Cache-Control', 'max-age=604800,s-maxage=604800,public')
+    event.waitUntil(cache.put(cacheKey, new Response(b2, asset)))
     return response
   }
   // otherwise SSR
@@ -32,7 +42,12 @@ async function handleEvent(event) {
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>uikit</title>
       <link rel="stylesheet" type="text/css" href="./styles.css" />
-    <script defer src="/main.js"></script><link href="/styles.css" rel="stylesheet"></head>
+      <script defer src="/main.js"></script>
+      <link href="/styles.css" rel="stylesheet"></head>
+      <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+      </style>
+      <!-- style outlet -->
     <body>
       <div id="root"></div>
     </body>
@@ -44,6 +59,8 @@ async function handleEvent(event) {
       .replace('<div id="root"></div>', `<div id="root">${app}</div>`)
     const response = new Response(finalIndex, options)
     response.headers.set('content-type', 'text/html')
+    response.headers.set('Cache-Control', 'max-age=604800,s-maxage=604800,public')
+    event.waitUntil(cache.put(cacheKey, new Response(finalIndex)))
     return response
   } catch (err) {
     return new Response(err.toString(), {
