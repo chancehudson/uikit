@@ -1,0 +1,27 @@
+.button-outer {
+  display: flex;
+  justify-content: center;
+}
+.button-inner {
+  background: #151616;
+  border-radius: 8px;
+  padding: 12px 16px;
+  color: #FDFDFD;
+  cursor: pointer;
+  font-weight: bold;
+  border: 1px solid transparent;
+  user-select: none;
+  min-width: 100px;
+  text-align: center;
+}
+.button-inner.hover {
+  border: 1px solid #151616;
+  color: #151616;
+  background: transparent;
+}
+.button-inner.error {
+  background: red;
+}
+.button-inner.success {
+  background: green;
+}
