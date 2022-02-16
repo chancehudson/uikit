@@ -1,0 +1,16 @@
+name = "uikit"
+type = "javascript"
+account_id = ""
+workers_dev = true
+zone_id = ""
+compatibility_date = "2022-02-16"
+
+[site]
+bucket = "build"
+entry-point = "dist"
+
+[build]
+command = "npm i && npm run build:worker"
+
+[build.upload]
+format = "service-worker"
