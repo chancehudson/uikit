@@ -1,0 +1,33 @@
+version: 2.1
+workflows:
+  test_app:
+    jobs:
+      # - lint
+      - deploy
+
+jobs:
+  # lint:
+  #   machine:
+  #     image: ubuntu-2004:202010-01
+  #   steps:
+  #     - checkout
+  #     - run:
+  #         name: Install
+  #         command: npm ci
+  #     - run:
+  #         name: Lint
+  #         command: npm run lint:check
+  deploy:
+    machine:
+      image: ubuntu-2004:202010-01
+    steps:
+      - checkout
+      - run:
+          name: Install
+          command: npm ci
+      - run:
+          name: Build
+          command: npm run build
+      - run:
+          name: Deploy
+          command: cp wrangler.example.toml wrangler.toml && npx @cloudflare/wrangler@1.19.8 publish

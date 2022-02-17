@@ -10,7 +10,7 @@ bucket = "build"
 entry-point = "dist"
 
 [build]
-command = "npm i && npm run build:worker"
+command = "npm i && npm run build:worker && echo '{\"name\": \"uikit\",\"main\":\"index.js\"}' > dist/package.json"
 
 [build.upload]
 format = "service-worker"
