@@ -30,4 +30,7 @@ jobs:
           command: npm run build
       - run:
           name: Deploy
-          command: cp wrangler.example.toml wrangler.toml && npx @cloudflare/wrangler@1.19.8 publish
+          command: |
+            if [ "$CIRCLE_BRANCH" = "main" ]; then
+              cp wrangler.example.toml wrangler.toml && npx @cloudflare/wrangler@1.19.8 publish
+            fi
