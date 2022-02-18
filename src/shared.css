@@ -1,5 +1,5 @@
 .header {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid var(--color-black);
   padding: 4px;
   display: flex;
   justify-content: space-around;
@@ -14,7 +14,7 @@
 .section-box {
   padding: 4px;
   margin: 4px;
-  border: 1px solid black;
+  border: 1px solid var(--color-black);
 }
 
 .section-components {

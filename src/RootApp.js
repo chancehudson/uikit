@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import Home from './Home'
 import './index.css'
+import './colors.css'
 
 const Page1 = () => (<div>Page 1</div>)
 

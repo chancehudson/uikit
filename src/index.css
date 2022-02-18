@@ -1,4 +1,6 @@
 body {
   margin: auto;
   font-family: 'Inter', sans-serif;
+  background: var(--color-white);
+  color: var(--color-black);
 }

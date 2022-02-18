@@ -1,7 +1,7 @@
 .example-section {
   max-width: 400px;
   padding: 8px;
-  border: 1px solid black;
+  border: 1px solid var(--color-black);
 }
 
 .title-section {
