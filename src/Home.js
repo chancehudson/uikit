@@ -3,6 +3,7 @@ import './shared.css'
 
 import Button from './components/Button'
 import ExampleSection from './components/ExampleSection'
+import Tooltip from './components/Tooltip'
 
 const Spacer = () => <div style={{ width: '8px', height: '8px' }} />
 
@@ -48,6 +49,12 @@ export default () => {
           >
             Error Example
           </Button>
+        </ExampleSection>
+        <ExampleSection name="Tooltip" description="A general purpose mousever text component.">
+          <Tooltip text="I'm a popup!" />
+          <Tooltip text="😃" />
+          <Tooltip text="I'm a really long popup, I have a lot to say and don't want to overwhelm the user!" />
+          <Tooltip text="I should not go off the side of the screen if the screen is small. Try resizing your window so that I'm close to the edge, and then mouse over me." />
         </ExampleSection>
       </div>
     </div>

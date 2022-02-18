@@ -1,0 +1,17 @@
+.tooltip-outer {
+  position: relative;
+}
+.tooltip-popup {
+  padding: 8px;
+  background: #05141A;
+  border: 1px solid #5D7078;
+  z-index: 100000;
+  position: absolute;
+  border-radius: 8px;
+  display: flex;
+}
+.tooltip-inner {
+  font-size: 12px;
+  font-weight: normal;
+  color: #F2F2F2;
+}
