@@ -7,7 +7,7 @@ import Home from '../src/Home'
 
 addEventListener('fetch', event => event.respondWith(handleEvent(event)))
 
-const DEBUG = false
+const DEBUG = true
 
 async function handleEvent(event) {
   const options = {}
@@ -18,7 +18,7 @@ async function handleEvent(event) {
   }
   const cache = caches.default
   const cacheKey = new Request(new URL(event.request.url).toString(), event.request)
-  {
+  if (!DEBUG) {
     const response = await cache.match(cacheKey)
     console.log(`Cache hit: ${event.request.url}`)
     if (response) return response
@@ -29,8 +29,12 @@ async function handleEvent(event) {
     const [b1, b2] = asset.body.tee()
     const response = new Response(b1, asset)
     response.headers.set('Referrer-Policy', 'unsafe-url')
-    response.headers.set('Cache-Control', 'max-age=604800,s-maxage=604800,public')
-    event.waitUntil(cache.put(cacheKey, new Response(b2, asset)))
+    if (/.+\.svg$/.test(event.request.url)) {
+      response.headers.set('Cache-Control', 'max-age=604800,s-maxage=604800,public')
+    }
+    if (!DEBUG) {
+      event.waitUntil(cache.put(cacheKey, new Response(b2, asset)))
+    }
     return response
   }
   // otherwise SSR
@@ -60,7 +64,9 @@ async function handleEvent(event) {
     const response = new Response(finalIndex, options)
     response.headers.set('content-type', 'text/html')
     response.headers.set('Cache-Control', 'max-age=604800,s-maxage=604800,public')
-    event.waitUntil(cache.put(cacheKey, new Response(finalIndex)))
+    if (!DEBUG) {
+      event.waitUntil(cache.put(cacheKey, new Response(finalIndex)))
+    }
     return response
   } catch (err) {
     return new Response(err.toString(), {
