@@ -29,7 +29,12 @@ export default observer(({ text, maxWidth }) => {
         onMouseEnter={() => setShowingPopup(true)}
         onMouseLeave={() => setShowingPopup(false)}
       >
-        <img width="18px" height="18px" src={require('../../assets/info_question.svg')} />
+        <img
+          width="18px"
+          height="18px"
+          src={require('../../assets/info_question.svg')}
+          alt="Mouseover tooltip icon"
+        />
       </div>
       {showingPopup &&
         <div className={`tooltip-popup ${ui.modeCssClass}`}
