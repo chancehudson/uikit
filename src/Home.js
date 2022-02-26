@@ -22,7 +22,7 @@ export default observer(() => {
       <div className={`section-box ${ui.modeCssClass}`}>
         <div>A shared interface kit for developing Ethereum based applications.</div>
         <Button onClick={() => ui.setDarkmode(!ui.darkmode)}>
-          {ui.darkmode ? 'Dark' : 'Light'}
+          {ui.darkmode ? 'Light' : 'Dark'}
         </Button>
       </div>
       <div className="section-components">
