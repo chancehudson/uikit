@@ -2,8 +2,14 @@ import React from 'react'
 const { useState } = React
 import './button.css'
 
-export default ({ children, loadingText, onClick }) => {
+export default ({
+  type,
+  children,
+  loadingText,
+  onClick,
+}) => {
   const [mouseActive, setMouseActive] = useState(false)
+  const [mouseClicked, setMouseClicked] = useState(false)
   const [loading, setLoading] = useState(false)
   const [loadingMessage, setLoadingMessage] = useState()
   const [success, setSuccess] = useState(false)
@@ -12,6 +18,8 @@ export default ({ children, loadingText, onClick }) => {
   const [errorMessage, setErrorMessage] = useState('Error!')
   const onMouseEnter = () => setMouseActive(true)
   const onMouseLeave = () => setMouseActive(false)
+  const onMouseDown = () => setMouseClicked(true)
+  const onMouseUp = () => setMouseClicked(false)
   const handleClick = async () => {
     if (typeof onClick !== 'function') return
     if (errored || success || loading) return
@@ -42,13 +50,17 @@ export default ({ children, loadingText, onClick }) => {
         className={
           `
             button-inner
-            ${mouseActive ? 'hover' : ''}
+            ${type ?? 'outline'}
+            ${mouseActive && !mouseClicked ? 'hover' : ''}
+            ${mouseClicked ? 'clicked' : ''}
             ${errored ? 'error' : ''}
             ${success ? 'success' : ''}
           `
         }
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
+        onMouseDown={onMouseDown}
+        onMouseUp={onMouseUp}
         onClick={handleClick}
       >
         {errored ? errorMessage : undefined}

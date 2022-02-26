@@ -1,7 +1,11 @@
 html {
   --color-black: rgba(21, 22, 22, 1);
   --color-white: rgba(252, 252, 252, 1);
+  --color-gray-1: rgba(240, 240, 240, 1);
+  --color-gray-2: rgba(228, 228, 228, 1);
   --color-gray-4: rgba(158, 163, 167, 1);
+  --color-gray-5: rgba(117, 121, 126, 1);
+  --color-gray-6: rgba(117, 121, 126, 1);
   --color-blue-4: rgba(73, 73, 231, 1);
   --color-purple-4: rgba(207, 196, 251, 1);
   --color-green-4: rgba(184, 232, 145, 1);

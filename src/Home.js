@@ -21,34 +21,52 @@ export default () => {
       </div>
       <div className="section-components">
         <ExampleSection name="Button" description="A multi-purpose button with support for asynchronous operations.">
-          <Button onClick={() => new Promise(r => setTimeout(r, 2000))}>
-            Normal Example
-          </Button>
-          <Button onClick={async (update) => {
-            await new Promise(r => setTimeout(r, 2000))
-            update('Still loading...')
-            await new Promise(r => setTimeout(r, 2000))
-            update('Uh...')
-            await new Promise(r => setTimeout(r, 2000))
-            update('What is taking so long...')
-            await new Promise(r => setTimeout(r, 2000))
-            update('3...')
-            await new Promise(r => setTimeout(r, 1000))
-            update('2...')
-            await new Promise(r => setTimeout(r, 1000))
-            update('1...')
-            await new Promise(r => setTimeout(r, 1000))
-            return 'Finally!'
-          }
-          }>
-            Updating Example
-          </Button>
-          <Button
-            loadingText="😅 😅 😅"
-            onClick={() => new Promise((_,r) => setTimeout(() => r(new Error('Button: Uh Oh!')), 2000))}
-          >
-            Error Example
-          </Button>
+          <div style={{ display: 'flex', flexDirection: 'column'}}>
+            <Button type="outline" onClick={() => new Promise(r => setTimeout(r, 2000))}>
+              Outline
+            </Button>
+            <Spacer />
+            <Button type="borderless" onClick={() => new Promise(r => setTimeout(r, 2000))}>
+              Borderless
+            </Button>
+            <Spacer />
+            <Button type="solid" onClick={() => new Promise(r => setTimeout(r, 2000))}>
+              Solid
+            </Button>
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', minWidth: '200px'}}>
+            <Button type="outline" onClick={async (update) => {
+              await new Promise(r => setTimeout(r, 2000))
+              update('Still loading...')
+              await new Promise(r => setTimeout(r, 2000))
+              update('Uh...')
+              await new Promise(r => setTimeout(r, 2000))
+              update('What is taking so long...')
+              await new Promise(r => setTimeout(r, 2000))
+              update('3...')
+              await new Promise(r => setTimeout(r, 1000))
+              update('2...')
+              await new Promise(r => setTimeout(r, 1000))
+              update('1...')
+              await new Promise(r => setTimeout(r, 1000))
+              return 'Finally!'
+            }
+            }>
+              Updating Example
+            </Button>
+            <Spacer />
+            <Button type="borderless" onClick={() => new Promise(r => setTimeout(r, 2000))}>
+              Borderless
+            </Button>
+            <Spacer />
+            <Button
+              type="solid"
+              loadingText="😅 😅 😅"
+              onClick={() => new Promise((_,r) => setTimeout(() => r(new Error('Button: Uh Oh!')), 2000))}
+            >
+              Error Example
+            </Button>
+          </div>
         </ExampleSection>
         <ExampleSection name="Tooltip" description="A general purpose mousever text component.">
           <Tooltip text="I'm a popup!" />
