@@ -14,16 +14,18 @@ export default observer(() => {
   return (
     <div className={`container ${ui.modeCssClass}`}>
       <div className={`header ${ui.modeCssClass}`}>
-        <div>
-          Privacy and Scalability Explorations UIKit
+        <div className="header5">
+          Privacy & Scalability Explorations UIKit
         </div>
       </div>
-      <div style={{ height: '8px'}} />
-      <div className={`section-box ${ui.modeCssClass}`}>
-        <div>A shared interface kit for developing Ethereum based applications.</div>
-        <Button onClick={() => ui.setDarkmode(!ui.darkmode)}>
-          {ui.darkmode ? 'Light' : 'Dark'}
-        </Button>
+      <div style={{display: 'flex', justifyContent: 'center', margin: '8px'}}>
+        <div className={`section-box ${ui.modeCssClass}`}>
+          <div>A shared interface kit for developing Ethereum based applications.</div>
+          <div style={{ width: '8px' }} />
+          <Button size="xsmall" onClick={() => ui.setDarkmode(!ui.darkmode)}>
+            {ui.darkmode ? 'Light' : 'Dark'}
+          </Button>
+        </div>
       </div>
       <div className="section-components">
         <ExampleSection name="Button" description="A multi-purpose button with support for asynchronous operations.">
