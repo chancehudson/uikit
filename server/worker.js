@@ -44,7 +44,7 @@ async function handleEvent(event) {
     <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>uikit</title>
+      <title>UIKit Demo</title>
       <link rel="stylesheet" type="text/css" href="./styles.css" />
       <script defer src="/main.js"></script>
       <link href="/styles.css" rel="stylesheet"></head>
