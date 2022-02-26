@@ -4,12 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "webpack-dev-server",
     "build": "webpack",
-    "html": "node scripts/generateWorkerHtml",
     "build:server": "webpack --config webpack.server.js",
     "dev:ssr": "npm run build && node server",
-    "dev": "webpack-dev-server",
-    "build:worker": "webpack --config webpack.worker.js",
+    "build:worker": "npm run build && npm run html && webpack --config webpack.worker.js",
+    "html": "node scripts/generateWorkerHtml",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Chance Hudson",
