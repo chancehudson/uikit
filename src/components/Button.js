@@ -6,6 +6,7 @@ import { observer } from 'mobx-react-lite'
 
 export default observer(({
   type,
+  size,
   children,
   loadingText,
   onClick,
@@ -59,6 +60,7 @@ export default observer(({
           `
             button-inner
             ${type ?? 'outline'}
+            ${size ?? 'normal'}
             ${mouseActive && !mouseClicked ? 'hover' : ''}
             ${mouseClicked ? 'clicked' : ''}
             ${errored ? 'error' : ''}
