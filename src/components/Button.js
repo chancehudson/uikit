@@ -20,7 +20,12 @@ export default observer(({
   const [successMessage, setSuccessMessage] = useState()
   const [errored, setErrored] = useState(false)
   const [errorMessage, setErrorMessage] = useState('Error!')
-  const onMouseEnter = () => setMouseActive(true)
+  const onMouseEnter = (e) => {
+    if (e.buttons > 0) {
+      setMouseClicked(true)
+    }
+    setMouseActive(true)
+  }
   const onMouseLeave = () => {
     setMouseActive(false)
     setMouseClicked(false)
