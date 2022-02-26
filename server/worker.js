@@ -27,14 +27,14 @@ async function handleEvent(event) {
   if (/.+\.[a-zA-Z]+$/.test(event.request.url)) {
     // the file has an extension, treat it as a static asset
     const asset = await getAssetFromKV(event, options)
-    const [b1, b2] = asset.body.tee()
+    // const [b1, b2] = asset.body.tee()
     const response = new Response(b1, asset)
     response.headers.set('Referrer-Policy', 'unsafe-url')
     if (/.+\.svg$/.test(event.request.url)) {
       response.headers.set('Cache-Control', 'max-age=604800,s-maxage=604800,public')
     }
     if (!DEBUG) {
-      event.waitUntil(cache.put(cacheKey, new Response(b2, asset)))
+      event.waitUntil(cache.put(cacheKey, new Response(asset.body, asset)))
     }
     return response
   }
