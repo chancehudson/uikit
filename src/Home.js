@@ -30,15 +30,15 @@ export default observer(() => {
       <div className="section-components">
         <ExampleSection name="Button" description="A multi-purpose button with support for asynchronous operations.">
           <div style={{ display: 'flex', flexDirection: 'column'}}>
-            <Button type="outline" onClick={() => new Promise(r => setTimeout(r, 2000))}>
+            <Button type="outline">
               Outline
             </Button>
             <Spacer />
-            <Button type="borderless" onClick={() => new Promise(r => setTimeout(r, 2000))}>
+            <Button type="borderless">
               Borderless
             </Button>
             <Spacer />
-            <Button type="solid" onClick={() => new Promise(r => setTimeout(r, 2000))}>
+            <Button type="solid">
               Solid
             </Button>
           </div>
@@ -64,7 +64,7 @@ export default observer(() => {
             </Button>
             <Spacer />
             <Button type="borderless" onClick={() => new Promise(r => setTimeout(r, 2000))}>
-              Borderless
+              Success Example
             </Button>
             <Spacer />
             <Button
@@ -73,6 +73,26 @@ export default observer(() => {
               onClick={() => new Promise((_,r) => setTimeout(() => r(new Error('Button: Uh Oh!')), 2000))}
             >
               Error Example
+            </Button>
+          </div>
+          <div className="header6" style={{ alignSelf: 'center' }}>
+            Sizes
+          </div>
+          <div style={{ display: 'flex' }}>
+            <Button type="solid" size="xlarge">
+              xlarge
+            </Button>
+            <div style={{ width: '4px' }} />
+            <Button type="outline" size="small">
+              small
+            </Button>
+            <div style={{ width: '4px' }} />
+            <Button type="outline" size="xsmall">
+              xsmall
+            </Button>
+            <div style={{ width: '4px' }} />
+            <Button type="solid" size="large">
+              large
             </Button>
           </div>
         </ExampleSection>

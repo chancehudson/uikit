@@ -2,6 +2,8 @@
   max-width: 400px;
   padding: 8px;
   border: 1px solid var(--color-black);
+  display: flex;
+  flex-direction: column;
 }
 
 .example-section.dark {
