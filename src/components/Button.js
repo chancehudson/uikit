@@ -21,7 +21,10 @@ export default observer(({
   const [errored, setErrored] = useState(false)
   const [errorMessage, setErrorMessage] = useState('Error!')
   const onMouseEnter = () => setMouseActive(true)
-  const onMouseLeave = () => setMouseActive(false)
+  const onMouseLeave = () => {
+    setMouseActive(false)
+    setMouseClicked(false)
+  }
   const onMouseDown = () => setMouseClicked(true)
   const onMouseUp = () => setMouseClicked(false)
   const handleClick = async () => {
