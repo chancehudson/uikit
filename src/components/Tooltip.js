@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import measureText from '../utils/measure-text'
 import './tooltip.css'
+import UIContext from '../stores/interface'
+import { observer } from 'mobx-react-lite'
 
-export default ({ text, maxWidth }) => {
+export default observer(({ text, maxWidth }) => {
+  const ui = React.useContext(UIContext)
   const containerEl = React.createRef()
   const [showingPopup, setShowingPopup] = useState(false)
   const [leftOffset, setLeftOffset] = useState(0)
@@ -29,14 +32,14 @@ export default ({ text, maxWidth }) => {
         <img width="18px" height="18px" src={require('../../assets/info_question.svg')} />
       </div>
       {showingPopup &&
-        <div className="tooltip-popup"
+        <div className={`tooltip-popup ${ui.modeCssClass}`}
             style={{
               width: `${textWidth}px`,
               left: `-${leftOffset}px`,
             }}
         >
           <div
-            className="tooltip-inner"
+            className={`tooltip-inner ${ui.modeCssClass}`}
           >
             {text}
           </div>
@@ -44,4 +47,4 @@ export default ({ text, maxWidth }) => {
       }
     </div>
   )
-}
+})

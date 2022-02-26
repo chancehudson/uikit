@@ -6,15 +6,32 @@
   font-size: 24px;
 }
 
+.header.dark {
+  border-bottom: 1px solid var(--color-white);
+}
+
 .container {
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
+}
+
+.container.dark {
+  background: var(--color-black);
+  color: var(--color-white);
 }
 
 .section-box {
   padding: 4px;
   margin: 4px;
   border: 1px solid var(--color-black);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section-box.dark {
+  border: 1px solid var(--color-white);
 }
 
 .section-components {

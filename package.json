@@ -14,6 +14,8 @@
   "author": "Chance Hudson",
   "license": "GPL-3.0-or-later",
   "dependencies": {
+    "mobx": "^6.4.2",
+    "mobx-react-lite": "^3.3.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router-dom": "^6.2.1"

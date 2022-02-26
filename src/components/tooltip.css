@@ -3,15 +3,22 @@
 }
 .tooltip-popup {
   padding: 8px;
-  background: #05141A;
-  border: 1px solid #5D7078;
+  background: var(--color-black);
+  border: 1px solid var(--color-gray-1);
   z-index: 100000;
   position: absolute;
   border-radius: 8px;
   display: flex;
 }
+.tooltip-popup.dark {
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-9);
+}
 .tooltip-inner {
   font-size: 12px;
   font-weight: normal;
-  color: #F2F2F2;
+  color: var(--color-white);
+}
+.tooltip-inner.dark {
+  color: var(--color-black);
 }

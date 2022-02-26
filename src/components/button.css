@@ -11,50 +11,101 @@
   min-width: 100px;
   text-align: center;
 }
+/* borderless */
 .button-inner.borderless {
   background: var(--color-white);
   color: var(--color-black);
-}
-.button-inner.solid {
-  background: var(--color-black);
-  color: var(--color-white);
-}
-.button-inner.outline {
-  background: var(--color-white);
-  color: var(--color-black);
-  border: 1px solid var(--color-black);
 }
 .button-inner.hover.borderless {
   color: var(--color-black);
   background: var(--color-gray-1);
 }
+.button-inner.clicked.borderless {
+  color: var(--color-black);
+  background: var(--color-gray-2);
+}
+.button-inner.borderless.dark {
+  background: var(--color-black);
+  color: var(--color-white);
+}
+.button-inner.hover.borderless.dark {
+  color: var(--color-white);
+  background: var(--color-gray-9);
+}
+.button-inner.clicked.borderless.dark {
+  color: var(--color-white);
+  background: var(--color-gray-8);
+}
+/* solid */
+.button-inner.solid {
+  background: var(--color-black);
+  color: var(--color-white);
+}
 .button-inner.hover.solid {
   color: var(--color-white);
   background: var(--color-gray-4);
+}
+.button-inner.clicked.solid {
+  color: var(--color-white);
+  background: var(--color-gray-5);
+}
+.button-inner.solid.dark {
+  background: var(--color-white);
+  color: var(--color-black);
+}
+.button-inner.hover.solid {
+  color: var(--color-black);
+  background: var(--color-gray-4);
+}
+.button-inner.clicked.solid {
+  color: var(--color-black);
+  background: var(--color-gray-5);
+}
+/* outline */
+.button-inner.outline {
+  background: var(--color-white);
+  color: var(--color-black);
+  border: 1px solid var(--color-black);
 }
 .button-inner.hover.outline {
   color: var(--color-gray-4);
   background: var(--color-white);
   border: 1px solid var(--color-gray-4);
 }
-.button-inner.clicked.borderless {
-  color: var(--color-black);
-  background: var(--color-gray-2);
-}
-.button-inner.clicked.solid {
-  color: var(--color-white);
-  background: var(--color-gray-5);
-}
 .button-inner.clicked.outline {
   color: var(--color-gray-6);
-  background: transparent;
+  background: var(--color-white);
   border: 1px solid var(--color-gray-6);
 }
+.button-inner.outline.dark {
+  background: var(--color-black);
+  color: var(--color-white);
+  border: 1px solid var(--color-white);
+}
+.button-inner.hover.outline.dark {
+  color: var(--color-gray-4);
+  background: var(--color-black);
+  border: 1px solid var(--color-gray-4);
+}
+.button-inner.clicked.outline.dark {
+  color: var(--color-gray-6);
+  background: var(--color-black);
+  border: 1px solid var(--color-gray-6);
+}
+/* error/success stuff */
 .button-inner.error {
   color: var(--color-black);
   background: var(--color-pink-4);
 }
 .button-inner.success {
+  color: var(--color-black);
+  background: var(--color-green-4);
+}
+.button-inner.error.dark {
+  color: var(--color-black);
+  background: var(--color-pink-4);
+}
+.button-inner.success.dark {
   color: var(--color-black);
   background: var(--color-green-4);
 }

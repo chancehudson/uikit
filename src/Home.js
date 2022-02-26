@@ -4,20 +4,26 @@ import './shared.css'
 import Button from './components/Button'
 import ExampleSection from './components/ExampleSection'
 import Tooltip from './components/Tooltip'
+import { observer } from 'mobx-react-lite'
+import UIContext from './stores/interface'
 
 const Spacer = () => <div style={{ width: '8px', height: '8px' }} />
 
-export default () => {
+export default observer(() => {
+  const ui = React.useContext(UIContext)
   return (
-    <div className="container">
-      <div className="header">
+    <div className={`container ${ui.modeCssClass}`}>
+      <div className={`header ${ui.modeCssClass}`}>
         <div>
           Privacy and Scalability Explorations UIKit
         </div>
       </div>
       <div style={{ height: '8px'}} />
-      <div className="section-box">
-        A shared interface kit for developing Ethereum based applications.
+      <div className={`section-box ${ui.modeCssClass}`}>
+        <div>A shared interface kit for developing Ethereum based applications.</div>
+        <Button onClick={() => ui.setDarkmode(!ui.darkmode)}>
+          {ui.darkmode ? 'Dark' : 'Light'}
+        </Button>
       </div>
       <div className="section-components">
         <ExampleSection name="Button" description="A multi-purpose button with support for asynchronous operations.">
@@ -77,4 +83,4 @@ export default () => {
       </div>
     </div>
   )
-}
+})

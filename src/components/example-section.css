@@ -4,6 +4,10 @@
   border: 1px solid var(--color-black);
 }
 
+.example-section.dark {
+  border: 1px solid var(--color-white);
+}
+
 .title-section {
   display: flex;
   flex-direction: column;

@@ -1,13 +1,16 @@
 import React from 'react'
 const { useState } = React
 import './button.css'
+import UIContext from '../stores/interface'
+import { observer } from 'mobx-react-lite'
 
-export default ({
+export default observer(({
   type,
   children,
   loadingText,
   onClick,
 }) => {
+  const ui = React.useContext(UIContext)
   const [mouseActive, setMouseActive] = useState(false)
   const [mouseClicked, setMouseClicked] = useState(false)
   const [loading, setLoading] = useState(false)
@@ -26,11 +29,16 @@ export default ({
     const updateFunc = (newText) => setLoadingMessage(newText)
     try {
       setLoading(true)
-      const message = await onClick(updateFunc)
-      setLoading(false)
-      setSuccessMessage(message ?? 'Success!')
-      setSuccess(true)
-      setTimeout(() => setSuccess(false), 3000)
+      const res = onClick(updateFunc)
+      if (typeof res === 'object' && typeof res.then === 'function') {
+        const message = await onClick(updateFunc)
+        setLoading(false)
+        setSuccessMessage(message ?? 'Success!')
+        setSuccess(true)
+        setTimeout(() => setSuccess(false), 3000)
+      } else {
+        setLoading(false)
+      }
     } catch (err) {
       setErrored(true)
       setLoading(false)
@@ -55,6 +63,7 @@ export default ({
             ${mouseClicked ? 'clicked' : ''}
             ${errored ? 'error' : ''}
             ${success ? 'success' : ''}
+            ${ui.modeCssClass}
           `
         }
         onMouseEnter={onMouseEnter}
@@ -70,4 +79,4 @@ export default ({
       </div>
     </div>
   )
-}
+})

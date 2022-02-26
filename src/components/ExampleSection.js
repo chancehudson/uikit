@@ -1,9 +1,12 @@
 import React from 'react'
 import './example-section.css'
+import UIContext from '../stores/interface'
+import { observer } from 'mobx-react-lite'
 
-export default ({ children, name, description }) => {
+export default observer(({ children, name, description }) => {
+  const ui = React.useContext(UIContext)
   return (
-    <div className="example-section">
+    <div className={`example-section ${ui.modeCssClass}`}>
       <div className="title-section">
         <div className="title">
           {name}
@@ -23,4 +26,4 @@ export default ({ children, name, description }) => {
       </div>
     </div>
   )
-}
+})
