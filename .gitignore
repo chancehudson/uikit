@@ -6,3 +6,4 @@ build
 wrangler.toml
 dist
 workers-site
+html.js

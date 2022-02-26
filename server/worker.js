@@ -4,6 +4,7 @@ import React from 'react'
 import ReactDOMServer from 'react-dom/server'
 
 import Home from '../src/Home'
+import html from './html'
 
 addEventListener('fetch', event => event.respondWith(handleEvent(event)))
 
@@ -38,28 +39,9 @@ async function handleEvent(event) {
     return response
   }
   // otherwise SSR
-  const index = `
-  <!DOCTYPE html>
-  <html lang="en">
-    <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>UIKit Demo</title>
-      <link rel="stylesheet" type="text/css" href="./styles.css" />
-      <script defer src="/main.js"></script>
-      <link href="/styles.css" rel="stylesheet"></head>
-      <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
-      </style>
-      <!-- style outlet -->
-    <body>
-      <div id="root"></div>
-    </body>
-  </html>
-  `
   try {
     const app = ReactDOMServer.renderToString(<Home />)
-    const finalIndex = index
+    const finalIndex = html
       .replace('<div id="root"></div>', `<div id="root">${app}</div>`)
     const response = new Response(finalIndex, options)
     response.headers.set('content-type', 'text/html')

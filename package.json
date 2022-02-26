@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
+    "html": "node scripts/generateWorkerHtml",
     "build:server": "webpack --config webpack.server.js",
     "dev:ssr": "npm run build && node server",
     "dev": "webpack-dev-server",

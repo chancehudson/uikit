@@ -27,7 +27,7 @@ jobs:
           command: npm ci
       - run:
           name: Build
-          command: npm run build -- --mode=production
+          command: npm run build -- --mode=production && npm run html
       - run:
           name: Deploy
           command: |
