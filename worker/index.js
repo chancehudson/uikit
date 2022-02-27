@@ -5,7 +5,7 @@ import ReactDOMServer from 'react-dom/server'
 import Home from '../src/Home'
 
 // Enables edge cdn - https://developers.cloudflare.com/workers/learning/how-the-cache-works/
-const DEBUG = true
+const DEBUG = false
 const ENABLE_ASSET_CACHE = true
 const ENABLE_SSR_CACHE = false // TODO: cache bust after deployment
 
