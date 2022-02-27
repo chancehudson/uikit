@@ -3,7 +3,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 
 module.exports = {
-  entry: './server/worker.js',
+  entry: './worker/index.js',
   // use production to avoid eval()
   mode: 'production',
   target: 'webworker',

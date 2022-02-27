@@ -24,5 +24,5 @@ const path = require('path')
   </body>
 </html>
 `
-  await fs.writeFile(path.join(__dirname, '../server/html.js'), `export default \`${html}\``)
+  await fs.writeFile(path.join(__dirname, '../worker/html.js'), `export default \`${html}\``)
 })()
