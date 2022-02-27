@@ -5,7 +5,7 @@ import Button from './components/Button'
 import ExampleSection from './components/ExampleSection'
 import Tooltip from './components/Tooltip'
 import { observer } from 'mobx-react-lite'
-import UIContext from './stores/interface'
+import UIContext from './contexts/interface'
 
 const Spacer = () => <div style={{ width: '8px', height: '8px' }} />
 

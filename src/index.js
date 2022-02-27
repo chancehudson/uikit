@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import Home from './Home'
 import './index.css'
 import './colors.css'
-import UIContext from './stores/interface'
+import UIContext from './contexts/interface'
 
 const RootApp = () => (
   <BrowserRouter>

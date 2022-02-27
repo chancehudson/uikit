@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import measureText from '../utils/measure-text'
 import './tooltip.css'
-import UIContext from '../stores/interface'
+import UIContext from '../contexts/interface'
 import { observer } from 'mobx-react-lite'
 
 export default observer(({ text, maxWidth }) => {
