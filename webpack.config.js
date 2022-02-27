@@ -39,7 +39,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'static/index.ejs',
+      template: 'assets/index.ejs',
       filename: 'index.html',
       inlineSource: '.(js|css)',
     }),
