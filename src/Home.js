@@ -1,5 +1,5 @@
 import React from 'react'
-import './shared.css'
+import './home.css'
 
 import Button from './components/Button'
 import ExampleSection from './components/ExampleSection'

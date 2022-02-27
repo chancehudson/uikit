@@ -2,7 +2,6 @@ import React from 'react'
 import './example-section.css'
 import UIContext from '../stores/interface'
 import { observer } from 'mobx-react-lite'
-import '../shared.css'
 
 export default observer(({ children, name, description }) => {
   const ui = React.useContext(UIContext)

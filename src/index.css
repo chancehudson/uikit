@@ -5,6 +5,47 @@ body {
   color: var(--color-black);
 }
 
+.header1 {
+  font-size: 96px;
+  font-weight: 900;
+}
+
+.header2 {
+  font-size: 72px;
+  font-weight: 900;
+}
+
+.header3 {
+  font-size: 56px;
+  font-weight: 700;
+}
+
+.header4 {
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.header5 {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.header6 {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container.dark {
+  background: var(--color-black);
+  color: var(--color-white);
+}
+
 /* cyrillic-ext */
 @font-face {
   font-family: 'Inter';
