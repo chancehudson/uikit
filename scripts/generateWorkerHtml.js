@@ -12,6 +12,10 @@ const path = require('path')
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UIKit Demo</title>
     <script defer src="/main.js"></script>
+
+    <!-- remove when adding favicon -->
+    <link rel="icon" href="data:,">
+
     <style>
       ${styleData}
     </style>
