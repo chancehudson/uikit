@@ -1,46 +1,7 @@
 {
-  "name": "uikit",
-  "version": "0.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "dev": "webpack-dev-server",
-    "build": "webpack",
-    "build:server": "webpack --config webpack.server.js",
-    "dev:ssr": "npm run build && node server",
-    "build:worker": "npm run build && npm run html && webpack --config webpack.worker.js",
-    "html": "node scripts/generateWorkerHtml",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Chance Hudson",
-  "license": "GPL-3.0-or-later",
-  "dependencies": {
-    "mobx": "^6.4.2",
-    "mobx-react-lite": "^3.3.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-router-dom": "^6.2.1"
-  },
+  "name": "root",
+  "private": true,
   "devDependencies": {
-    "@babel/core": "^7.16.12",
-    "@babel/plugin-proposal-class-properties": "^7.16.7",
-    "@babel/plugin-proposal-decorators": "^7.16.7",
-    "@babel/preset-env": "^7.16.11",
-    "@babel/preset-react": "^7.16.7",
-    "@babel/register": "^7.16.9",
-    "@cloudflare/kv-asset-handler": "^0.2.0",
-    "babel-loader": "^8.2.3",
-    "babel-plugin-css-modules-transform": "^1.6.2",
-    "babel-plugin-dynamic-import-node": "^2.3.3",
-    "babel-polyfill": "^6.26.0",
-    "css-loader": "^6.5.1",
-    "css-minimizer-webpack-plugin": "^3.4.1",
-    "file-loader": "^6.2.0",
-    "html-webpack-inline-source-plugin": "^0.0.10",
-    "html-webpack-plugin": "^5.5.0",
-    "mini-css-extract-plugin": "^2.5.3",
-    "webpack": "^5.67.0",
-    "webpack-cli": "^4.9.2",
-    "webpack-dev-server": "^4.7.3"
+    "lerna": "^4.0.0"
   }
 }

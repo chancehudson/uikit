@@ -24,13 +24,13 @@ jobs:
       - checkout
       - run:
           name: Install
-          command: npm ci
+          command: npx lerna bootstrap
       - run:
           name: Build
-          command: npm run build -- --mode=production && npm run html
+          command: cd packages/demosite && npm run build -- --mode=production && npm run html
       - run:
           name: Deploy
           command: |
             if [ "$CIRCLE_BRANCH" = "main" ]; then
-              cp wrangler.example.toml wrangler.toml && npx @cloudflare/wrangler@1.19.8 publish
+              cd packages/demosite && cp wrangler.example.toml wrangler.toml && npx @cloudflare/wrangler@1.19.8 publish
             fi
