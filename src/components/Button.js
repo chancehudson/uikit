@@ -40,7 +40,7 @@ export default observer(({
       setLoading(true)
       const res = onClick(updateFunc)
       if (typeof res === 'object' && typeof res.then === 'function') {
-        const message = await onClick(updateFunc)
+        const message = await res
         setLoading(false)
         setSuccessMessage(message ?? 'Success!')
         setSuccess(true)
