@@ -1,7 +1,7 @@
 import React from 'react'
 const { useState } = React
 import './button.css'
-import UIContext from '../contexts/interface'
+import UIContext from './contexts/interface'
 import { observer } from 'mobx-react-lite'
 
 export default observer(({

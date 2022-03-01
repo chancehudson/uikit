@@ -1,11 +1,11 @@
 import React from 'react'
 import './home.css'
 
-import Button from './components/Button'
+import Button from '@appliedzkp/kit/src/Button'
 import ExampleSection from './components/ExampleSection'
-import Tooltip from './components/Tooltip'
+import Tooltip from '@appliedzkp/kit/src/Tooltip'
 import { observer } from 'mobx-react-lite'
-import UIContext from './contexts/interface'
+import UIContext from '@appliedzkp/kit/src/contexts/interface'
 
 const Spacer = () => <div style={{ width: '8px', height: '8px' }} />
 

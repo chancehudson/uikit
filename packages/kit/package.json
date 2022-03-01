@@ -1,0 +1,33 @@
+{
+  "name": "@appliedzkp/kit",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "Chance Hudson <jchancehud@gmail.com>",
+  "homepage": "https://github.com/vimwitch/uikit#readme",
+  "license": "GPL-3.0-or-later",
+  "main": "src/index.js",
+  "directories": {
+    "src": "src"
+  },
+  "files": [
+    "src"
+  ],
+  "peerDependencies": {
+    "react": ">=17.0.0",
+    "mobx": ">=6.4.2",
+    "mobx-react-lite": ">=3.3.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vimwitch/uikit.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/vimwitch/uikit/issues"
+  }
+}

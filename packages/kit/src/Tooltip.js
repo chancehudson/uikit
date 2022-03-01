@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import measureText from '../utils/measure-text'
+import measureText from './utils/measure-text'
 import './tooltip.css'
-import UIContext from '../contexts/interface'
+import UIContext from './contexts/interface'
 import { observer } from 'mobx-react-lite'
 
 export default observer(({ text, maxWidth }) => {
@@ -32,7 +32,7 @@ export default observer(({ text, maxWidth }) => {
         <img
           width="18px"
           height="18px"
-          src={require('../../assets/info_question.svg')}
+          src={require('../assets/info_question.svg')}
           alt="Mouseover tooltip icon"
         />
       </div>
