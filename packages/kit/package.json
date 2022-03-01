@@ -6,6 +6,12 @@
   "homepage": "https://github.com/vimwitch/uikit#readme",
   "license": "GPL-3.0-or-later",
   "main": "src/index.js",
+  "exports": {
+    "./Button": "./src/Button.js",
+    "./Tooltip": "./src/Tooltip.js",
+    "./interface": "./src/contexts/interface.js",
+    "./colors.css": "./src/colors.css"
+  },
   "directories": {
     "src": "src"
   },

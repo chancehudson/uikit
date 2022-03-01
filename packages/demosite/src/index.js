@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom'
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import Home from './Home'
 import './index.css'
-import '@appliedzkp/kit/src/colors.css'
+import '@appliedzkp/kit/colors.css'
 
 const RootApp = () => (
   <BrowserRouter>

@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  user-select: none;
 }
 .button-inner {
   border-radius: 24px;
@@ -10,6 +11,9 @@
   user-select: none;
   text-align: center;
   font-size: 16px;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 .button-inner.xlarge {
   border-radius: 32px;
@@ -38,11 +42,13 @@
   background: var(--color-white);
   color: var(--color-black);
 }
-.button-inner.hover.borderless {
-  color: var(--color-black);
-  background: var(--color-gray-1);
+@media (hover: hover) and (pointer: fine) {
+  .button-inner:hover.borderless {
+    color: var(--color-black);
+    background: var(--color-gray-1);
+  }
 }
-.button-inner.clicked.borderless {
+.button-inner:active.borderless {
   color: var(--color-black);
   background: var(--color-gray-2);
 }
@@ -50,11 +56,13 @@
   background: var(--color-black);
   color: var(--color-white);
 }
-.button-inner.hover.borderless.dark {
-  color: var(--color-white);
-  background: var(--color-gray-9);
+@media (hover: hover) and (pointer: fine) {
+  .button-inner:hover.borderless.dark {
+    color: var(--color-white);
+    background: var(--color-gray-9);
+  }
 }
-.button-inner.clicked.borderless.dark {
+.button-inner:active.borderless.dark {
   color: var(--color-white);
   background: var(--color-gray-8);
 }
@@ -63,11 +71,13 @@
   background: var(--color-black);
   color: var(--color-white);
 }
-.button-inner.hover.solid {
-  color: var(--color-white);
-  background: var(--color-gray-4);
+@media (hover: hover) and (pointer: fine) {
+  .button-inner:hover.solid {
+    color: var(--color-white);
+    background: var(--color-gray-4);
+  }
 }
-.button-inner.clicked.solid {
+.button-inner:active.solid {
   color: var(--color-white);
   background: var(--color-gray-5);
 }
@@ -75,11 +85,13 @@
   background: var(--color-white);
   color: var(--color-black);
 }
-.button-inner.hover.solid {
-  color: var(--color-black);
-  background: var(--color-gray-4);
+@media (hover: hover) and (pointer: fine) {
+  .button-inner:hover.solid {
+    color: var(--color-black);
+    background: var(--color-gray-4);
+  }
 }
-.button-inner.clicked.solid {
+.button-inner:active.solid {
   color: var(--color-black);
   background: var(--color-gray-5);
 }
@@ -89,12 +101,14 @@
   color: var(--color-black);
   border: 1px solid var(--color-black);
 }
-.button-inner.hover.outline {
-  color: var(--color-gray-4);
-  background: var(--color-white);
-  border: 1px solid var(--color-gray-4);
+@media (hover: hover) and (pointer: fine) {
+  .button-inner:hover.outline {
+    color: var(--color-gray-4);
+    background: var(--color-white);
+    border: 1px solid var(--color-gray-4);
+  }
 }
-.button-inner.clicked.outline {
+.button-inner:active.outline {
   color: var(--color-gray-6);
   background: var(--color-white);
   border: 1px solid var(--color-gray-6);
@@ -104,12 +118,14 @@
   color: var(--color-white);
   border: 1px solid var(--color-white);
 }
-.button-inner.hover.outline.dark {
-  color: var(--color-gray-4);
-  background: var(--color-black);
-  border: 1px solid var(--color-gray-4);
+@media (hover: hover) and (pointer: fine) {
+  .button-inner:hover.outline.dark {
+    color: var(--color-gray-4);
+    background: var(--color-black);
+    border: 1px solid var(--color-gray-4);
+  }
 }
-.button-inner.clicked.outline.dark {
+.button-inner:active.outline.dark {
   color: var(--color-gray-6);
   background: var(--color-black);
   border: 1px solid var(--color-gray-6);

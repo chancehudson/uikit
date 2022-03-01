@@ -12,26 +12,12 @@ export default observer(({
   onClick,
 }) => {
   const ui = React.useContext(UIContext)
-  const [mouseActive, setMouseActive] = useState(false)
-  const [mouseClicked, setMouseClicked] = useState(false)
   const [loading, setLoading] = useState(false)
   const [loadingMessage, setLoadingMessage] = useState()
   const [success, setSuccess] = useState(false)
   const [successMessage, setSuccessMessage] = useState()
   const [errored, setErrored] = useState(false)
   const [errorMessage, setErrorMessage] = useState('Error!')
-  const onMouseEnter = (e) => {
-    if (e.buttons > 0) {
-      setMouseClicked(true)
-    }
-    setMouseActive(true)
-  }
-  const onMouseLeave = () => {
-    setMouseActive(false)
-    setMouseClicked(false)
-  }
-  const onMouseDown = () => setMouseClicked(true)
-  const onMouseUp = () => setMouseClicked(false)
   const handleClick = async () => {
     if (typeof onClick !== 'function') return
     if (errored || success || loading) return
@@ -44,7 +30,7 @@ export default observer(({
         setLoading(false)
         setSuccessMessage(message ?? 'Success!')
         setSuccess(true)
-        setTimeout(() => setSuccess(false), 3000)
+        setTimeout(() => setSuccess(false), 2000)
       } else {
         setLoading(false)
       }
@@ -54,6 +40,7 @@ export default observer(({
       if (err.toString().startsWith('Error: Button: ')) {
         setErrorMessage(err.toString().replace('Error: Button: ', ''))
       } else {
+        console.log(err)
         setErrorMessage('Error!')
       }
       setTimeout(() => setErrored(false), 3000)
@@ -69,17 +56,11 @@ export default observer(({
             button-inner
             ${type ?? 'outline'}
             ${size ?? 'normal'}
-            ${mouseActive && !mouseClicked ? 'hover' : ''}
-            ${mouseClicked ? 'clicked' : ''}
             ${errored ? 'error' : ''}
             ${success ? 'success' : ''}
             ${ui.modeCssClass}
           `
         }
-        onMouseEnter={onMouseEnter}
-        onMouseLeave={onMouseLeave}
-        onMouseDown={onMouseDown}
-        onMouseUp={onMouseUp}
         onClick={handleClick}
       >
         {errored ? errorMessage : undefined}
