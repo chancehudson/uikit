@@ -32,7 +32,7 @@ async function ssr(event) {
   try {
     const cookie = event.request.headers.get('Cookie')
     const iface = new Interface()
-    if (cookie.indexOf('darkmode=true') !== -1) {
+    if (typeof cookie === 'string' && cookie.indexOf('darkmode=true') !== -1) {
       // render in darkmode
       iface.setDarkmode(true)
     }
