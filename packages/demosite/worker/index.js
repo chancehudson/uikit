@@ -3,6 +3,7 @@ import html from './html'
 import React from 'react'
 import ReactDOMServer from 'react-dom/server'
 import Home from '../src/Home'
+import UIContext, { Interface } from '@appliedzkp/kit/interface'
 
 // Enables edge cdn - https://developers.cloudflare.com/workers/learning/how-the-cache-works/
 const DEBUG = false
@@ -29,7 +30,17 @@ async function generateResponse(event) {
 
 async function ssr(event) {
   try {
-    const app = ReactDOMServer.renderToString(<Home />)
+    const cookie = event.request.headers.get('Cookie')
+    const iface = new Interface()
+    if (cookie.indexOf('darkmode=true') !== -1) {
+      // render in darkmode
+      iface.setDarkmode(true)
+    }
+    const app = ReactDOMServer.renderToString(
+      <UIContext.Provider value={iface}>
+        <Home />
+      </UIContext.Provider>
+    )
     // use npm run
     const finalIndex = html
       .replace('<div id="root"></div>', `<div id="root">${app}</div>`)
