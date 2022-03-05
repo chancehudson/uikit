@@ -9,6 +9,7 @@
   "exports": {
     "./Button": "./src/Button.js",
     "./Tooltip": "./src/Tooltip.js",
+    "./Checkbox": "./src/Checkbox.js",
     "./interface": "./src/contexts/interface.js",
     "./colors.css": "./src/colors.css"
   },

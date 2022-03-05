@@ -6,12 +6,15 @@ import './home.css'
 
 import Tooltip from '@appliedzkp/kit/Tooltip'
 import Button from '@appliedzkp/kit/Button'
+import Checkbox from '@appliedzkp/kit/Checkbox'
 import UIContext from '@appliedzkp/kit/interface'
 
 const Spacer = () => <div style={{ width: '8px', height: '8px' }} />
 
 export default observer(() => {
   const ui = React.useContext(UIContext)
+  const [pulseDriveEnabled, setPulseDriveEnabled] = React.useState(false)
+  const [energyDiffusionEnabled, setEnergyDiffusionEnabled] = React.useState(true)
   return (
     <div className={`container ${ui.modeCssClass}`}>
       <div className={`header ${ui.modeCssClass}`}>
@@ -102,6 +105,21 @@ export default observer(() => {
           <Tooltip text="😃" />
           <Tooltip text="I'm a really long popup, I have a lot to say and don't want to overwhelm the user!" />
           <Tooltip text="I should not go off the side of the screen if the screen is small. Try resizing your window so that I'm close to the edge, and then mouse over me." />
+        </ExampleSection>
+        <ExampleSection style={{ flexDirection: 'column' }} name="Checkbox" description="An input for binary state">
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            <Checkbox onChange={setPulseDriveEnabled} />
+            <Spacer />
+            <span>Enable pulse drive{pulseDriveEnabled ? ' 🚀' : ''}</span>
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            <Checkbox
+              onChange={setEnergyDiffusionEnabled}
+              checked={energyDiffusionEnabled}
+            />
+            <Spacer />
+            <span>Enable safe energy diffusion{energyDiffusionEnabled ? '' : ' 🔥'}</span>
+          </div>
         </ExampleSection>
       </div>
     </div>
