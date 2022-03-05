@@ -1,4 +1,5 @@
 input[type=checkbox] {
+  -webkit-appearance: none;
   appearance: none;
   position: relative;
   background: var(--color-gray-1);
