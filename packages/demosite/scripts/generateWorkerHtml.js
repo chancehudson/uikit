@@ -17,7 +17,7 @@ const path = require('path')
     <link rel="icon" href="data:,">
 
     <style>
-      ${styleData}
+      ${styleData.toString().replace('\\', '\\\\')}
     </style>
   <body>
     <div id="root"></div>
