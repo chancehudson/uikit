@@ -4,6 +4,10 @@ A working repo for building Ethereum uikit components.
 
 View the site [here](https://uikit.jchancehud.workers.dev).
 
+## Working
+
+Put WIP components in a separate branch and then merge/push to main when you're ready to showcase it. **Make sure the demosite looks correct on your local machine before pushing (see "React Development" below)**. Have fun!
+
 ## Structure
 
 ### `packages/demosite`
