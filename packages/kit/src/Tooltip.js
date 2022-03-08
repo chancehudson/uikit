@@ -28,12 +28,12 @@ export default observer(({ text, maxWidth }) => {
     <div
       onMouseDown={() => {
         if (!ui.isMobile) return
+        if (timer) clearTimeout(timer)
         if (showingPopup) {
           setShowingPopup(false)
           return
         }
         setShowingPopup(true)
-        if (timer) clearTimeout(timer)
         const _timer = setTimeout(() => {
           setShowingPopup(false)
           setTimer(null)
