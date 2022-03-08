@@ -7,6 +7,7 @@ import { observer } from 'mobx-react-lite'
 export default observer(({ text, maxWidth }) => {
   const ui = React.useContext(UIContext)
   const containerEl = React.createRef()
+  const [timer, setTimer] = useState(null)
   const [showingPopup, setShowingPopup] = useState(false)
   const [leftOffset, setLeftOffset] = useState(0)
   const [textWidth, setTextWidth] = useState(0)
@@ -24,10 +25,27 @@ export default observer(({ text, maxWidth }) => {
     setLeftOffset(screenMaxWidth > minWidth ? 0 : (minWidth - screenMaxWidth))
   })
   return (
-    <div className="tooltip-outer" ref={containerEl}>
+    <div
+      onMouseDown={() => {
+        if (!ui.isMobile) return
+        if (showingPopup) {
+          setShowingPopup(false)
+          return
+        }
+        setShowingPopup(true)
+        if (timer) clearTimeout(timer)
+        const _timer = setTimeout(() => {
+          setShowingPopup(false)
+          setTimer(null)
+        }, 3000)
+        setTimer(_timer)
+      }}
+      className="tooltip-outer"
+      ref={containerEl}
+    >
       <div
-        onMouseEnter={() => setShowingPopup(true)}
-        onMouseLeave={() => setShowingPopup(false)}
+        onMouseEnter={!ui.isMobile && setShowingPopup.bind(null, true)}
+        onMouseLeave={!ui.isMobile && setShowingPopup.bind(null, false)}
       >
         <img
           width="18px"
