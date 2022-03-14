@@ -22,7 +22,7 @@ export default observer(({ children, name, description }) => {
         justifyContent: 'space-between',
         flexWrap: 'wrap'
       }}>
-        {children.map((c, i) => <div key={i} style={{ margin: '4px' }}>{c}</div>)}
+        {[children].flat().map((c, i) => <div key={i} style={{ margin: '4px' }}>{c}</div>)}
       </div>
     </div>
   )
