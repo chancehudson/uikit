@@ -8,6 +8,7 @@ import Tooltip from '@appliedzkp/kit/Tooltip'
 import Button from '@appliedzkp/kit/Button'
 import Checkbox from '@appliedzkp/kit/Checkbox'
 import UIContext from '@appliedzkp/kit/interface'
+import Textfield from '@appliedzkp/kit/Textfield'
 
 const Spacer = () => <div style={{ width: '8px', height: '8px' }} />
 
@@ -15,6 +16,8 @@ export default observer(() => {
   const ui = React.useContext(UIContext)
   const [pulseDriveEnabled, setPulseDriveEnabled] = React.useState(false)
   const [energyDiffusionEnabled, setEnergyDiffusionEnabled] = React.useState(true)
+  const [text, setText] = React.useState('')
+  const [enteredText, setEnteredText] = React.useState('')
   return (
     <div className={`container ${ui.modeCssClass}`}>
       <div className={`header ${ui.modeCssClass}`}>
@@ -119,6 +122,22 @@ export default observer(() => {
             />
             <Spacer />
             <span>Enable safe energy diffusion{energyDiffusionEnabled ? '' : ' 🔥'}</span>
+          </div>
+        </ExampleSection>
+        <ExampleSection name="Text Field (single line)" style={{ flexDirection: 'column' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+            <Textfield
+              style={{ width: '250px' }}
+              placeholder="Type something then press enter!"
+              onChange={setText}
+              onEnter={(t) => {
+                setEnteredText(t)
+                setText('')
+              }}
+              value={text}
+            />
+            <Spacer />
+            <div>{enteredText}</div>
           </div>
         </ExampleSection>
       </div>
