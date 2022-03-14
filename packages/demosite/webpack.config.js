@@ -12,7 +12,7 @@ module.exports = {
     publicPath: '/',
   },
   resolve: {
-    extensions: ['*', '.js', '.jsx'],
+    extensions: ['*', '.js', '.jsx', '.json'],
     // just for development, peer dependencies work when the module isn't linked
     alias: {
       react: require.resolve('react'),
