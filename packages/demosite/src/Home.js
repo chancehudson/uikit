@@ -4,11 +4,11 @@ import { observer } from 'mobx-react-lite'
 import ExampleSection from './components/ExampleSection'
 import './home.css'
 
-import Tooltip from '@appliedzkp/kit/Tooltip'
-import Button from '@appliedzkp/kit/Button'
-import Checkbox from '@appliedzkp/kit/Checkbox'
-import UIContext from '@appliedzkp/kit/interface'
-import Textfield from '@appliedzkp/kit/Textfield'
+import Tooltip from 'nanoether/Tooltip'
+import Button from 'nanoether/Button'
+import Checkbox from 'nanoether/Checkbox'
+import UIContext from 'nanoether/interface'
+import Textfield from 'nanoether/Textfield'
 
 const Spacer = () => <div style={{ width: '8px', height: '8px' }} />
 

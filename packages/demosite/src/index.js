@@ -4,8 +4,8 @@ import ReactDOM from 'react-dom'
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import Home from './Home'
 import './index.css'
-import '@appliedzkp/kit/colors.css'
-import UIContext from '@appliedzkp/kit/interface'
+import 'nanoether/colors.css'
+import UIContext from 'nanoether/interface'
 
 const RootApp = () => {
   const ui = React.useContext(UIContext)
