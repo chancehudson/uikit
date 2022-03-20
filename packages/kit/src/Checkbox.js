@@ -6,6 +6,7 @@ import { observer } from 'mobx-react-lite'
 export default observer(({
   onChange,
   checked: _checked, // optional
+  ...props
 }) => {
   const ui = React.useContext(UIContext)
 
@@ -21,6 +22,7 @@ export default observer(({
       type="checkbox"
       onChange={checkedChanged}
       checked={_checked}
+      {...props}
     />
   )
 })

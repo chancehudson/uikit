@@ -10,6 +10,7 @@ export default observer(({
   children,
   loadingText,
   onClick,
+  ...props
 }) => {
   const ui = React.useContext(UIContext)
   const [loading, setLoading] = useState(false)
@@ -62,6 +63,7 @@ export default observer(({
           `
         }
         onClick={handleClick}
+        {...props}
       >
         {errored ? errorMessage : undefined}
         {loading ? (loadingMessage ?? loadingText ?? 'Loading...') : undefined}

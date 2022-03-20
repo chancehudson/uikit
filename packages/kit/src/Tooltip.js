@@ -4,7 +4,11 @@ import './tooltip.css'
 import UIContext from './contexts/interface'
 import { observer } from 'mobx-react-lite'
 
-export default observer(({ text, maxWidth }) => {
+export default observer(({
+  text,
+  maxWidth,
+  ...props
+}) => {
   const ui = React.useContext(UIContext)
   const containerEl = React.createRef()
   const [timer, setTimer] = useState(null)
@@ -42,6 +46,7 @@ export default observer(({ text, maxWidth }) => {
       }}
       className="tooltip-outer"
       ref={containerEl}
+      {...props}
     >
       <div
         onMouseEnter={!ui.isMobile && setShowingPopup.bind(null, true)}
