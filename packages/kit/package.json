@@ -1,6 +1,6 @@
 {
   "name": "nanoether",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "> TODO: description",
   "author": "Chance Hudson <jchancehud@gmail.com>",
   "homepage": "https://github.com/vimwitch/uikit#readme",
@@ -18,7 +18,8 @@
     "src": "src"
   },
   "files": [
-    "src"
+    "src",
+    "assets"
   ],
   "peerDependencies": {
     "react": ">=17.0.0",
