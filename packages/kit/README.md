@@ -101,30 +101,6 @@ return (
 
 A React context backed by a mobx store. Used for controlling dark/light mode settings and mobile screen detection.
 
-Example intitialization logic:
-```jsx
-import UIContext from `nanoether/interface`
-
-const RootApp = () => {
-  const ui = React.useContext(UIContext)
-  React.useEffect(() => {
-    // when the page loads the following should be executed
-    if (typeof window !== 'undefined') {
-      ui.load()
-    }
-  }, [])
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
-    </BrowserRouter>
-  )
-}
-
-
-```
-
 ## Styles
 
 ### Colors

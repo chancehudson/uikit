@@ -14,14 +14,17 @@ export class Interface {
 
   constructor() {
     makeAutoObservable(this)
+    if (typeof window !== 'undefined') {
+      this.load()
+    }
   }
 
   // must be called in browser, not in SSR
   load() {
+    this.updateWindowSize()
+    window.addEventListener('resize', this.updateWindowSize.bind(this))
     this.setDarkmode(!!localStorage.getItem('darkmode'))
     document.cookie = `darkmode=${this.darkmode.toString()}`
-    window.addEventListener('resize', this.updateWindowSize.bind(this))
-    this.updateWindowSize()
   }
 
   updateWindowSize() {
