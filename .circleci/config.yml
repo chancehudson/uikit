@@ -24,7 +24,7 @@ jobs:
       - checkout
       - run:
           name: Install
-          command: npx lerna bootstrap --force-local
+          command: npm i -g npm && npx lerna bootstrap --force-local
       - run:
           name: Build
           command: cd packages/demosite && npm run build -- --mode=production && npm run html
