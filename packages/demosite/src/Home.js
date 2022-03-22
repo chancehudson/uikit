@@ -9,6 +9,7 @@ import Button from 'nanoether/Button'
 import Checkbox from 'nanoether/Checkbox'
 import UIContext from 'nanoether/interface'
 import Textfield from 'nanoether/Textfield'
+import Stepper from 'nanoether/Stepper'
 
 const Spacer = () => <div style={{ width: '8px', height: '8px' }} />
 
@@ -18,6 +19,7 @@ export default observer(() => {
   const [energyDiffusionEnabled, setEnergyDiffusionEnabled] = React.useState(true)
   const [text, setText] = React.useState('')
   const [enteredText, setEnteredText] = React.useState('')
+  const [step, setStep] = React.useState(1)
   return (
     <div className={`container ${ui.modeCssClass}`}>
       <div className={`header ${ui.modeCssClass}`}>
@@ -138,6 +140,37 @@ export default observer(() => {
             />
             <Spacer />
             <div>{enteredText}</div>
+          </div>
+        </ExampleSection>
+        <ExampleSection name="Stepper">
+          <div>
+            <div style={{ marginBottom: '12px' }}>
+              <Stepper currentStep={step} />
+              <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '4px' }}>
+                <Button
+                  size="xsmall"
+                  onClick={() => {
+                    if (1 < step) setStep(step - 1)
+                  }}
+                >
+                  prev
+                </Button>
+                <Button
+                  size="xsmall"
+                  onClick={() => {
+                    if (step < 3) setStep(step + 1)
+                  }}
+                >
+                  next
+                </Button>
+              </div>
+            </div>
+            <div style={{ marginBottom: '12px' }}>
+              <Stepper size="large" maxStep={4} currentStep={2} style={{ width: '300px' }} />
+            </div>
+            <div style={{ marginBottom: '12px' }}>
+              <Stepper size="xlarge" />
+            </div>
           </div>
         </ExampleSection>
       </div>
