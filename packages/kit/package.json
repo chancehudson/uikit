@@ -13,7 +13,10 @@
     "./Checkbox": "./src/Checkbox.js",
     "./Stepper": "./src/Stepper.js",
     "./interface": "./src/contexts/interface.js",
-    "./colors.css": "./src/colors.css"
+    "./colors.css": "./src/utils/colors.css",
+    "./fonts.css": "./src/utils/fonts.css",
+    "./utils.css": "./src/utils/utils.css",
+    "./reset.css": "./src/utils/reset.css"
   },
   "directories": {
     "src": "src"

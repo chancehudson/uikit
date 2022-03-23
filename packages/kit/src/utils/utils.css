@@ -5,6 +5,8 @@ html {
 .flex {
   display: flex;
   gap: var(--gap, 0.5rem);
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .flex-column {
