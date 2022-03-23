@@ -11,18 +11,17 @@ export default observer(({ children, name, description }) => {
         <div className="header6">
           {name}
         </div>
-        <div style={{ height: '4px' }} />
         <div className="description">
           {description}
         </div>
-        <div style={{ height: '4px' }} />
       </div>
       <div style={{
         display: 'flex',
         justifyContent: 'space-between',
-        flexWrap: 'wrap'
+        flexWrap: 'wrap',
+        gap: '4px'
       }}>
-        {[children].flat().map((c, i) => <div key={i} style={{ margin: '4px' }}>{c}</div>)}
+        {children}
       </div>
     </div>
   )

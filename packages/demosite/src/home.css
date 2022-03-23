@@ -29,3 +29,7 @@
   justify-content: space-around;
   flex-wrap: wrap;
 }
+
+.header6 {
+  padding-bottom: 4px;
+}

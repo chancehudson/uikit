@@ -50,26 +50,24 @@ export default observer(({
     }
   }
   return (
-    <div className="button-outer">
-      <div
-        className={
-          `
-            button-inner
+    <div
+      className={
+        `
+            button
             ${type ?? 'outline'}
             ${size ?? 'normal'}
             ${errored ? 'error' : ''}
             ${success ? 'success' : ''}
             ${ui.modeCssClass}
           `
-        }
-        onClick={handleClick}
-        {...props}
-      >
-        {errored ? errorMessage : undefined}
-        {loading ? (loadingMessage ?? loadingText ?? 'Loading...') : undefined}
-        {success ? successMessage ?? 'Success!' : undefined}
-        {!errored && !loading && !success ? children : undefined}
-      </div>
+      }
+      onClick={handleClick}
+      {...props}
+    >
+      {errored ? errorMessage : undefined}
+      {loading ? (loadingMessage ?? loadingText ?? 'Loading...') : undefined}
+      {success ? successMessage ?? 'Success!' : undefined}
+      {!errored && !loading && !success ? children : undefined}
     </div>
   )
 })

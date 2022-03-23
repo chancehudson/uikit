@@ -27,7 +27,7 @@ export default observer(() => {
           Privacy & Scalability Explorations UIKit
         </div>
       </div>
-      <div style={{display: 'flex', justifyContent: 'center', margin: '8px'}}>
+      <div style={{ display: 'flex', justifyContent: 'center', margin: '8px' }}>
         <div className={`section-box ${ui.modeCssClass}`}>
           <div>A shared interface kit for developing Ethereum based applications.</div>
           <div style={{ width: '8px' }} />
@@ -38,20 +38,19 @@ export default observer(() => {
       </div>
       <div className="section-components">
         <ExampleSection name="Button" description="A multi-purpose button with support for asynchronous operations.">
-          <div style={{ display: 'flex', flexDirection: 'column'}}>
+          <div className="grid" style={{ gridTemplateColumns: "1fr 1fr" }}>
+            <div className="flex flex-column">
             <Button type="outline">
               Outline
             </Button>
-            <Spacer />
             <Button type="borderless">
               Borderless
             </Button>
-            <Spacer />
             <Button type="solid">
               Solid
             </Button>
           </div>
-          <div style={{ display: 'flex', flexDirection: 'column', minWidth: '200px'}}>
+            <div className="flex flex-column">
             <Button type="outline" onClick={async (update) => {
               await new Promise(r => setTimeout(r, 2000))
               update('Still loading...')
@@ -71,38 +70,50 @@ export default observer(() => {
             }>
               Updating Example
             </Button>
-            <Spacer />
             <Button type="borderless" onClick={() => new Promise(r => setTimeout(r, 2000))}>
               Success Example
             </Button>
-            <Spacer />
             <Button
               type="solid"
               loadingText="😅 😅 😅"
-              onClick={() => new Promise((_,r) => setTimeout(() => r(new Error('Button: Uh Oh!')), 2000))}
+                onClick={() => new Promise((_, r) => setTimeout(() => r(new Error('Button: Uh Oh!')), 2000))}
             >
               Error Example
             </Button>
           </div>
-          <div className="header6" style={{ alignSelf: 'center' }}>
+          </div>
+          <div>
+            <div className="header6">
             Sizes
           </div>
-          <div style={{ display: 'flex' }}>
+            <div className="flex" style={{ paddingBottom: ".25rem" }}>
             <Button type="solid" size="xlarge">
               xlarge
             </Button>
-            <div style={{ width: '4px' }} />
             <Button type="outline" size="small">
               small
             </Button>
-            <div style={{ width: '4px' }} />
             <Button type="outline" size="xsmall">
               xsmall
             </Button>
-            <div style={{ width: '4px' }} />
             <Button type="solid" size="large">
               large
             </Button>
+            </div>
+            <div className="flex flex-column">
+              <Button type="solid" size="xlarge">
+                xlarge
+              </Button>
+              <Button type="outline" size="small">
+                small
+              </Button>
+              <Button type="outline" size="xsmall">
+                xsmall
+              </Button>
+              <Button type="solid" size="large">
+                large
+              </Button>
+            </div>
           </div>
         </ExampleSection>
         <ExampleSection name="Tooltip" description="A general purpose mousever text component.">
