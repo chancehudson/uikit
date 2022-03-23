@@ -8,7 +8,7 @@ input[type=text] {
   border-radius: 2px;
   border: 1px solid var(--color-gray-4);
   color: var(--color-black);
-  font-family: 'Inter' sans-serif;
+  font-family: var(--font-sans) sans-serif;
 }
 
 input[type=text]::placeholder {
