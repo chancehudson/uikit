@@ -1,0 +1,17 @@
+html {
+  --gap: 0.5rem;
+}
+
+.flex {
+  display: flex;
+  gap: var(--gap, 0.5rem);
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.grid {
+  display: grid;
+  gap: var(--gap, 0.5rem);
+}

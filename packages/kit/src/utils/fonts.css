@@ -1,0 +1,8 @@
+html {
+  --font-sans: "Inter";
+  --font-xsmall: 0.75rem;
+  --font-small: 0.875rem;
+  --font-normal: 1rem;
+  --font-large: 1.125rem;
+  --font-xlarge: 1.25rem;
+}
