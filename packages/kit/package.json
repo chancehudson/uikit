@@ -1,7 +1,7 @@
 {
   "name": "nanoether",
   "version": "0.0.4",
-  "description": "> TODO: description",
+  "description": "A lightweight user interface kit",
   "author": "Chance Hudson <jchancehud@gmail.com>",
   "homepage": "https://github.com/vimwitch/uikit#readme",
   "license": "GPL-3.0-or-later",
