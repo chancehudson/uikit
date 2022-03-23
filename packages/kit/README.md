@@ -95,6 +95,26 @@ return (
 )
 ```
 
+### Stepper
+
+A stepper component indicating discrete progress.
+
+Props:
+  - `maxStep`: The total number of steps.
+  - `currentStep`: The latest step that has been complete.
+  - `size`: `normal`|`large`|`xlarge`
+
+```jsx
+import Stepper from 'nanoether/Stepper'
+
+return (
+  <Stepper
+    maxStep={4}
+    currentStep={2}
+  />
+)
+```
+
 ## Contexts
 
 ### Interface
