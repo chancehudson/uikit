@@ -12,6 +12,7 @@ input[type=checkbox] {
 
 input[type=checkbox].dark {
   background: var(--color-gray-9);
+  color: var(--color-white);
   border: 1px solid var(--color-gray-4);
 }
 
