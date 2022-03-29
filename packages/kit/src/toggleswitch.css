@@ -1,0 +1,60 @@
+input[type='checkbox'].nanoether--toggle {
+  display: none;
+}
+
+input[type='checkbox'].nanoether--toggle + label {
+  display: flex;
+  width: 52px;
+  height: 32px;
+  border: 1px solid var(--color-gray-9);
+  border-radius: 99em;
+  position: relative;
+  transition: all 0.25s ease;
+  transform-origin: 50% 50%;
+  background-color: var(--color-white);
+  cursor: pointer;
+}
+
+input[type='checkbox'].nanoether--toggle + label:before {
+  transition: all 0.25s ease;
+  transition-delay: 0.05s;
+  content: '';
+  display: block;
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  background-color: var(--color-gray-9);
+  border-radius: 50%;
+  top: 3px;
+  left: 4px;
+}
+
+/* checked style */
+input[type='checkbox'].nanoether--toggle:checked + label {
+  background-color: var(--color-gray-9);
+  border-color: var(--color-white);
+}
+
+input[type='checkbox'].nanoether--toggle:checked + label:before {
+  transform: translateX(18px);
+  background-color: var(--color-white);
+}
+
+/* dark theme */
+.dark > input[type='checkbox'].nanoether--toggle + label {
+  border-color: var(--color-white);
+  background-color: var(--color-gray-9);
+}
+
+.dark > input[type='checkbox'].nanoether--toggle + label:before {
+  background-color: var(--color-white);
+}
+
+.dark > input[type='checkbox'].nanoether--toggle:checked + label {
+  background-color: var(--color-white);
+  border-color: var(--color-gray-9);
+}
+
+.dark > input[type='checkbox'].nanoether--toggle:checked + label:before {
+  background-color: var(--color-gray-9);
+}
