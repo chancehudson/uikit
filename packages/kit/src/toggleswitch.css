@@ -28,9 +28,9 @@ input[type='checkbox'].nanoether--toggle:before {
 }
 
 /* checked style */
-input[type='checkbox'].nanoether--toggle:checked:before{
+input[type='checkbox'].nanoether--toggle:checked {
   background-color: var(--color-gray-9);
-  border-color: var(--color-white);
+  /* border-color: var(--color-white); */
 }
 
 input[type='checkbox'].nanoether--toggle:checked:before {
@@ -39,20 +39,20 @@ input[type='checkbox'].nanoether--toggle:checked:before {
 }
 
 /* dark theme */
-.dark > input[type='checkbox'].nanoether--toggle {
+input[type='checkbox'].nanoether--toggle.dark {
   border-color: var(--color-white);
   background-color: var(--color-gray-9);
 }
 
-.dark > input[type='checkbox'].nanoether--toggle:before {
+input[type='checkbox'].nanoether--toggle.dark:checked {
+  background-color: var(--color-white);
+  /* border-color: var(--color-gray-9); */
+}
+
+input[type='checkbox'].nanoether--toggle.dark:before {
   background-color: var(--color-white);
 }
 
-.dark > input[type='checkbox'].nanoether--toggle:checked {
-  background-color: var(--color-white);
-  border-color: var(--color-gray-9);
-}
-
-.dark > input[type='checkbox'].nanoether--toggle:checked:before {
+input[type='checkbox'].nanoether--toggle.dark:checked:before {
   background-color: var(--color-gray-9);
 }
