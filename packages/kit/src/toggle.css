@@ -23,14 +23,13 @@ input[type='checkbox'].nanoether--toggle:before {
   height: 26px;
   background-color: var(--color-gray-9);
   border-radius: 50%;
-  top: 3px;
+  top: 2px;
   left: 4px;
 }
 
 /* checked style */
 input[type='checkbox'].nanoether--toggle:checked {
   background-color: var(--color-gray-9);
-  /* border-color: var(--color-white); */
 }
 
 input[type='checkbox'].nanoether--toggle:checked:before {
@@ -46,7 +45,6 @@ input[type='checkbox'].nanoether--toggle.dark {
 
 input[type='checkbox'].nanoether--toggle.dark:checked {
   background-color: var(--color-white);
-  /* border-color: var(--color-gray-9); */
 }
 
 input[type='checkbox'].nanoether--toggle.dark:before {

@@ -10,7 +10,7 @@ import Checkbox from 'nanoether/Checkbox'
 import UIContext from 'nanoether/interface'
 import Textfield from 'nanoether/Textfield'
 import Stepper from 'nanoether/Stepper'
-import Toggle from 'nanoether/ToggleSwitch'
+import Toggle from 'nanoether/Toggle'
 
 const Spacer = () => <div style={{ width: '8px', height: '8px' }} />
 

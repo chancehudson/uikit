@@ -1,5 +1,5 @@
 import React from 'react'
-import './toggleswitch.css'
+import './toggle.css'
 import UIContext from './contexts/interface'
 
 const ToggleSwitch = ({ onChange, checked, ...props }) => {
@@ -9,12 +9,13 @@ const ToggleSwitch = ({ onChange, checked, ...props }) => {
     <input
       className={`nanoether--toggle ${ui.modeCssClass}`}
       type="checkbox"
-      checked={typeof checked === 'boolean' ? checked : undefined}
+      checked={checked}
       onChange={(e) => {
         if (onChange) {
           onChange(e.target.checked)
         }
       }}
+      {...props}
     />
   )
 }
