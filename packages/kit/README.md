@@ -120,15 +120,14 @@ return (
 A toggle switch component
 
 Props:
-  - `id: string`: Identifier of the toggle switch.
   - `onChange: Optional<(boolean) => void>`: Change event handler.
   - `checked: Optional<boolean>`: To make switch controlled field.
 
 ```jsx
-import Toggle from 'nanoether/ToggleSwitch'
+import Toggle from 'nanoether/Toggle'
 
 return (
-  <Toggle id="some-toggle-switch" onChange={setIsOn} checked={isOn} />
+  <Toggle onChange={setIsOn} checked={isOn} />
 )
 
 ```
