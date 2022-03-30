@@ -12,6 +12,7 @@
     "./Tooltip": "./src/Tooltip.js",
     "./Checkbox": "./src/Checkbox.js",
     "./Stepper": "./src/Stepper.js",
+    "./Toggle": "./src/Toggle.js",
     "./interface": "./src/contexts/interface.js",
     "./colors.css": "./src/colors.css"
   },

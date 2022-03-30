@@ -1,0 +1,56 @@
+input[type='checkbox'].nanoether--toggle {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 52px;
+  height: 32px;
+  border: 1px solid var(--color-gray-9);
+  border-radius: 90px;
+  position: relative;
+  transition: all 0.25s ease;
+  transform-origin: 50% 50%;
+  background-color: var(--color-white);
+  cursor: pointer;
+  display: flex;
+}
+
+input[type='checkbox'].nanoether--toggle:before {
+  transition: all 0.25s ease;
+  transition-delay: 0.05s;
+  content: '';
+  display: block;
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  background-color: var(--color-gray-9);
+  border-radius: 50%;
+  top: 2px;
+  left: 4px;
+}
+
+/* checked style */
+input[type='checkbox'].nanoether--toggle:checked {
+  background-color: var(--color-gray-9);
+}
+
+input[type='checkbox'].nanoether--toggle:checked:before {
+  transform: translateX(18px);
+  background-color: var(--color-white);
+}
+
+/* dark theme */
+input[type='checkbox'].nanoether--toggle.dark {
+  border-color: var(--color-white);
+  background-color: var(--color-gray-9);
+}
+
+input[type='checkbox'].nanoether--toggle.dark:checked {
+  background-color: var(--color-white);
+}
+
+input[type='checkbox'].nanoether--toggle.dark:before {
+  background-color: var(--color-white);
+}
+
+input[type='checkbox'].nanoether--toggle.dark:checked:before {
+  background-color: var(--color-gray-9);
+}

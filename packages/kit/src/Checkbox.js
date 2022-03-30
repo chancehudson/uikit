@@ -18,7 +18,7 @@ export default observer(({
   }
   return (
     <input
-      className={ui.modeCssClass}
+      className={`nanoether--checkbox ${ui.modeCssClass}`}
       type="checkbox"
       onChange={checkedChanged}
       checked={_checked}

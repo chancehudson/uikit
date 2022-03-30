@@ -10,6 +10,7 @@ import Checkbox from 'nanoether/Checkbox'
 import UIContext from 'nanoether/interface'
 import Textfield from 'nanoether/Textfield'
 import Stepper from 'nanoether/Stepper'
+import Toggle from 'nanoether/Toggle'
 
 const Spacer = () => <div style={{ width: '8px', height: '8px' }} />
 
@@ -20,6 +21,8 @@ export default observer(() => {
   const [text, setText] = React.useState('')
   const [enteredText, setEnteredText] = React.useState('')
   const [step, setStep] = React.useState(1)
+  const [isOn, setIsOn] = React.useState(false)
+  const [isOn2, setIsOn2] = React.useState(false)
   return (
     <div className={`container ${ui.modeCssClass}`}>
       <div className={`header ${ui.modeCssClass}`}>
@@ -170,6 +173,21 @@ export default observer(() => {
             </div>
             <div style={{ marginBottom: '12px' }}>
               <Stepper size="xlarge" />
+            </div>
+          </div>
+        </ExampleSection>
+        <ExampleSection name="Toggle Switch">
+          <div style={{ flexDirection: 'column' }}>
+            <div style={{ marginBottom: '12px', display: 'flex', alignItems: 'center' }}>
+              <Toggle onChange={setIsOn} id="toggle-sample1" />
+              <span style={{ marginLeft: '8px' }}> uncontrolled toggle {isOn ? 'on' : 'off'}</span>
+            </div>
+            <div style={{ marginBottom: '12px', display: 'flex', alignItems: 'center' }}>
+              <Toggle checked={isOn2} onChange={setIsOn2} id="toggle-sample2" />
+              <Button style={{ marginLeft: '8px' }} size="xsmall" onClick={() => setIsOn2(!isOn2)}>
+                button to toggle
+              </Button>
+              {isOn2 ? 'on' : 'off'}
             </div>
           </div>
         </ExampleSection>

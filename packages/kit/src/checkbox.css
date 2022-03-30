@@ -1,4 +1,4 @@
-input[type=checkbox] {
+input[type=checkbox].nanoether--checkbox {
   cursor: pointer;
   -webkit-appearance: none;
   appearance: none;
@@ -10,29 +10,29 @@ input[type=checkbox] {
   border: 1px solid var(--color-gray-4);
 }
 
-input[type=checkbox].dark {
+input[type=checkbox].nanoether--checkbox.dark {
   background: var(--color-gray-9);
   color: var(--color-white);
   border: 1px solid var(--color-gray-4);
 }
 
-input[type=checkbox]:hover {
+input[type=checkbox].nanoether--checkbox:hover {
   border: 1px solid var(--color-blue-4);
 }
 
-input[type=checkbox]:active {
+input[type=checkbox].nanoether--checkbox:active {
   border: 1px solid var(--color-green-4);
 }
 
-input[type=checkbox]:checked {
+input[type=checkbox].nanoether--checkbox:checked {
   background: var(--color-gray-2);
 }
 
-input[type=checkbox]:checked.dark {
+input[type=checkbox].nanoether--checkbox:checked.dark {
   background: var(--color-gray-8);
 }
 
-input[type=checkbox]:checked:after {
+input[type=checkbox].nanoether--checkbox:checked:after {
   content: '\2713';
   font-size: 14px;
   position: absolute;
