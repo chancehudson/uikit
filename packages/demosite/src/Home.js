@@ -4,13 +4,13 @@ import { observer } from 'mobx-react-lite'
 import ExampleSection from './components/ExampleSection'
 import './home.css'
 
-import Tooltip from 'nanoether/Tooltip'
-import Button from 'nanoether/Button'
-import Checkbox from 'nanoether/Checkbox'
-import UIContext from 'nanoether/interface'
-import Textfield from 'nanoether/Textfield'
-import Stepper from 'nanoether/Stepper'
-import Toggle from 'nanoether/Toggle'
+import Tooltip from 'nanoether/src/Tooltip'
+import Button from 'nanoether/src/Button'
+import Checkbox from 'nanoether/src/Checkbox'
+import UIContext from 'nanoether/src/contexts/interface'
+import Textfield from 'nanoether/src/Textfield'
+import Stepper from 'nanoether/src/Stepper'
+import Toggle from 'nanoether/src/Toggle'
 
 const Spacer = () => <div style={{ width: '8px', height: '8px' }} />
 

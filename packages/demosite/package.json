@@ -21,7 +21,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router-dom": "^6.2.1",
-    "nanoether": "^0.0.2"
+    "nanoether": "^9999.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.16.12",

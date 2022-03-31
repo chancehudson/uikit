@@ -1,6 +1,6 @@
 import React from 'react'
 import './example-section.css'
-import UIContext from 'nanoether/interface'
+import UIContext from 'nanoether/src/contexts/interface'
 import { observer } from 'mobx-react-lite'
 
 export default observer(({ children, name, description }) => {

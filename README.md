@@ -20,7 +20,7 @@ A package exporting various ui components and styles.
 
 ## Use
 
-`npx lerna bootstrap`
+`npx lerna bootstrap --force-local`
 
 ### React Development
 
