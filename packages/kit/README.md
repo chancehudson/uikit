@@ -115,6 +115,23 @@ return (
 )
 ```
 
+### Toggle Switch
+
+A toggle switch component
+
+Props:
+  - `onChange: Optional<(boolean) => void>`: Change event handler.
+  - `checked: Optional<boolean>`: To make switch controlled field.
+
+```jsx
+import Toggle from 'nanoether/Toggle'
+
+return (
+  <Toggle onChange={setIsOn} checked={isOn} />
+)
+
+```
+
 ## Contexts
 
 ### Interface
