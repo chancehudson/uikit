@@ -55,7 +55,7 @@ export default observer(({
         <img
           width="18px"
           height="18px"
-          src={require('../assets/info_question.svg')}
+          src={require('./assets/info_question.svg')}
           alt="Mouseover tooltip icon"
         />
       </div>

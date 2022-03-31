@@ -4,7 +4,7 @@ import './button.css'
 import UIContext from './contexts/interface'
 import { observer } from 'mobx-react-lite'
 
-export default observer(({
+export default (({
   type,
   size,
   children,
@@ -13,12 +13,12 @@ export default observer(({
   ...props
 }) => {
   const ui = React.useContext(UIContext)
-  const [loading, setLoading] = useState(false)
-  const [loadingMessage, setLoadingMessage] = useState()
-  const [success, setSuccess] = useState(false)
-  const [successMessage, setSuccessMessage] = useState()
-  const [errored, setErrored] = useState(false)
-  const [errorMessage, setErrorMessage] = useState('Error!')
+  const [loading, setLoading] = React.useState(false)
+  const [loadingMessage, setLoadingMessage] = React.useState()
+  const [success, setSuccess] = React.useState(false)
+  const [successMessage, setSuccessMessage] = React.useState()
+  const [errored, setErrored] = React.useState(false)
+  const [errorMessage, setErrorMessage] = React.useState('Error!')
   const handleClick = async () => {
     if (typeof onClick !== 'function') return
     if (errored || success || loading) return

@@ -1,31 +1,15 @@
 {
   "name": "nanoether",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "description": "A lightweight user interface kit",
   "author": "Chance Hudson <jchancehud@gmail.com>",
   "homepage": "https://github.com/vimwitch/uikit#readme",
   "license": "GPL-3.0-or-later",
   "main": "src/index.js",
-  "exports": {
-    "./Textfield": "./src/Textfield.js",
-    "./Button": "./src/Button.js",
-    "./Tooltip": "./src/Tooltip.js",
-    "./Checkbox": "./src/Checkbox.js",
-    "./Stepper": "./src/Stepper.js",
-    "./interface": "./src/contexts/interface.js",
-    "./colors.css": "./src/colors.css"
-  },
-  "directories": {
-    "src": "src"
-  },
-  "files": [
-    "src",
-    "assets"
-  ],
   "peerDependencies": {
-    "react": ">=17.0.0",
     "mobx": ">=6.4.2",
-    "mobx-react-lite": ">=3.3.0"
+    "mobx-react-lite": ">=3.3.0",
+    "react": ">=17.0.0"
   },
   "publishConfig": {
     "access": "public"
@@ -35,9 +19,17 @@
     "url": "git+https://github.com/vimwitch/uikit.git"
   },
   "scripts": {
+    "prepublish": "npm run build && sh scripts/prepublish.sh",
+    "build": "rm -rf build ; babel --presets=@babel/preset-react,@babel/preset-env ./src -d ./build",
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "bugs": {
     "url": "https://github.com/vimwitch/uikit/issues"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.8",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7"
   }
 }
