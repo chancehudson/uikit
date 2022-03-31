@@ -3,7 +3,7 @@ import html from './html'
 import React from 'react'
 import ReactDOMServer from 'react-dom/server'
 import Home from '../src/Home'
-import UIContext, { Interface } from 'nanoether/interface'
+import UIContext, { Interface } from 'nanoether/src/contexts/interface'
 
 // Enables edge cdn - https://developers.cloudflare.com/workers/learning/how-the-cache-works/
 const DEBUG = false
